@@ -354,7 +354,7 @@ public class FileTransfer extends CordovaPlugin {
                     conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
                     // Set the cookies on the response
-                    String cookie = mCookieManager.(target);
+                    String cookie = mCookieManager.getCookies(target);
 
                     if (cookie != null) {
                         conn.setRequestProperty("Cookie", cookie);
