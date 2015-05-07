@@ -245,7 +245,7 @@ public class FileTransfer extends CordovaPlugin {
         }
 
         if (!gotCookie) {
-            cookie = mCookieManager.getCookie(target);
+            cookie = mCookieManager.getCookies(target);
         }
 
         return cookie;
@@ -354,7 +354,7 @@ public class FileTransfer extends CordovaPlugin {
                     conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
                     // Set the cookies on the response
-                    String cookie = mCookieManager.getCookies(target);
+                    String cookie = mCookieManager.getCookie(target);
 
                     if (cookie != null) {
                         conn.setRequestProperty("Cookie", cookie);
@@ -820,7 +820,7 @@ public class FileTransfer extends CordovaPlugin {
                         connection.setRequestMethod("GET");
         
                         // TODO: Make OkHttp use this CookieManager by default.
-                        String cookie = mCookieManager.getCookies(sourceUri.toString());
+                        String cookie = mCookieManager.getCookie(sourceUri.toString());
 
                         if(cookie != null)
                         {
