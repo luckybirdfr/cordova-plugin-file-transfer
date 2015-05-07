@@ -245,7 +245,7 @@ public class FileTransfer extends CordovaPlugin {
         }
 
         if (!gotCookie) {
-            cookie = mCookieManager.getCookies(target);
+            cookie = mCookieManager.getCookie(target);
         }
 
         return cookie;
